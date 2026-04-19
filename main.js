@@ -125,5 +125,5 @@ function startMatch() {
   localStorage.removeItem("scoreB");
 
   /* NAVIGATE */
-  window.location.href = "toss.html";
+  window.location.href = "./toss.html";
 }
