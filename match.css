@@ -1,0 +1,218 @@
+@import url("style.css");
+
+/* ===============================
+   SCORE BOX (GLASS STYLE)
+================================ */
+.score-box {
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(12px);
+
+  padding: 20px;
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   MAIN SCORE
+================================ */
+#score {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: #22c55e;
+  margin-bottom: 8px;
+}
+
+/* ===============================
+   OVERS + TARGET
+================================ */
+#overs,
+#target {
+  text-align: center;
+  font-size: 15px;
+  color: #94a3b8;
+}
+
+/* ===============================
+   BATTER SECTION
+================================ */
+.score-box h3 {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* STRIKER */
+#striker {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* NON-STRIKER */
+#nonStriker {
+  color: #facc15;
+  font-weight: 600;
+}
+
+/* BATTER STATS */
+#strikerScore,
+#nonStrikerScore {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #e2e8f0;
+}
+
+/* ===============================
+   DIVIDER
+================================ */
+hr {
+  border: none;
+  height: 1px;
+  background: #1e293b;
+  margin: 16px 0;
+}
+
+/* ===============================
+   BUTTON GRID
+================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* BUTTON STYLE (GRID ONLY) */
+.grid button {
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 600;
+
+  border-radius: 14px;
+
+  background: #020617;
+  color: #e2e8f0;
+
+  border: 1px solid #1e293b;
+
+  transition: all 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.grid button:hover {
+  border-color: #22c55e;
+  transform: translateY(-2px);
+}
+
+/* CLICK EFFECT */
+.grid button:active {
+  transform: scale(0.95);
+}
+
+/* OUT BUTTON */
+.out {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+}
+
+/* ===============================
+   EXTRA CONTROLS (UNDO / SCORECARD)
+================================ */
+.extra-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.extra-controls button {
+  flex: 1;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: black;
+  font-weight: 600;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 500px) {
+  #score {
+    font-size: 38px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid button {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  #strikerScore,
+  #nonStrikerScore {
+    font-size: 13px;
+  }
+
+  .batsman-select {
+    margin-bottom: 20px;
+  }
+
+  #overSummary {
+    margin-top: 10px;
+    background: rgba(2, 6, 23, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+  }
+
+  #overSummary p {
+    font-size: 14px;
+    margin: 4px 0;
+    color: #cbd5f5;
+  }
+
+  .allout {
+    background: linear-gradient(135deg, #f97316, #ea580c) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.6);
+  }
+
+  #runRate,
+  #reqRunRate {
+    text-align: center;
+    font-size: 14px;
+    color: #38bdf8;
+    margin-top: 4px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #nextBatsmanBox {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(2, 6, 23, 0.7);
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+  }
+
+  .runout {
+    background: linear-gradient(135deg, #eab308, #ca8a04) !important;
+    color: black !important;
+  }
+
+  .catch {
+    background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+    color: white !important;
+  }
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket - Toss</title>
+
+    <link rel="stylesheet" href="toss.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div class="navbar">🎲 Toss</div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+      <!-- MATCH TEAMS -->
+      <h2 id="teams">Team A vs Team B</h2>
+
+      <!-- CALLER SECTION -->
+      <div class="section">
+        <h3>Who Calls?</h3>
+
+        <div class="button-group">
+          <button class="caller-btn" onclick="setCaller('A', event)">
+            Team A
+          </button>
+
+          <button class="caller-btn" onclick="setCaller('B', event)">
+            Team B
+          </button>
+        </div>
+      </div>
+
+      <!-- HEADS / TAILS -->
+      <div class="section">
+        <h3>Choose Call</h3>
+
+        <div class="button-group">
+          <button class="call-btn" onclick="setCall('HEADS', event)">
+            HEADS
+          </button>
+
+          <button class="call-btn" onclick="setCall('TAILS', event)">
+            TAILS
+          </button>
+        </div>
+      </div>
+
+      <!-- FLIP BUTTON -->
+      <button class="main-btn" onclick="flipCoin()">Flip Coin 🪙</button>
+
+      <!-- RESULT -->
+      <p id="result"></p>
+      <p id="winner"></p>
+
+      <!-- BAT / BOWL DECISION -->
+      <div id="decision" class="hidden">
+        <h3>Choose Decision</h3>
+
+        <div class="button-group">
+          <button onclick="choose('bat')">Bat 🏏</button>
+          <button onclick="choose('bowl')">Bowl 🎯</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="js/toss.js"></script>
+  </body>
+</html>

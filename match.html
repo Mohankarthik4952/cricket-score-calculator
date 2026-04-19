@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket - Match</title>
+
+    <link rel="stylesheet" href="match.css" />
+  </head>
+
+  <body>
+    <!-- ===============================
+     NAVBAR
+================================ -->
+    <div class="navbar">🏏 Live Match</div>
+
+    <!-- ===============================
+     MAIN CONTAINER
+================================ -->
+    <div class="container">
+      <!-- MATCH TITLE -->
+      <h2 id="title">Match</h2>
+
+      <!-- ===============================
+       BATSMAN SELECTION
+  ================================ -->
+      <div class="batsman-select">
+        <h3>Select Opening Batsmen</h3>
+
+        <select id="strikerSelect"></select>
+        <select id="nonStrikerSelect"></select>
+
+        <button onclick="startBatting()">Start Innings ▶</button>
+      </div>
+
+      <div id="nextBatsmanBox" class="hidden">
+        <h3>Select Next Batsman</h3>
+        <select id="nextBatsmanSelect"></select>
+        <button onclick="confirmNextBatsman()">Confirm</button>
+      </div>
+
+      <!-- ===============================
+       SCOREBOARD
+  ================================ -->
+      <div class="score-box">
+        <h1 id="score">0/0</h1>
+        <p id="overs">Overs: 0.0</p>
+        <p id="target"></p>
+        <p id="runRate"></p>
+        <p id="reqRunRate"></p>
+
+        <hr />
+
+        <!-- STRIKER -->
+        <h3>
+          Striker:
+          <span id="striker">-</span>
+        </h3>
+        <p id="strikerScore">0 (0) | SR: 0.0</p>
+
+        <!-- NON-STRIKER -->
+        <h3>
+          Non-Striker:
+          <span id="nonStriker">-</span>
+        </h3>
+        <p id="nonStrikerScore">0 (0) | SR: 0.0</p>
+      </div>
+
+      <!-- ===============================
+       OVER SUMMARY (NEW)
+  ================================ -->
+      <hr />
+
+      <h3>Over Summary</h3>
+      <div id="overSummary"></div>
+
+      <!-- ===============================
+       SCORING BUTTONS
+  ================================ -->
+      <div class="grid">
+        <button onclick="run(0)">0</button>
+        <button onclick="run(1)">1</button>
+        <button onclick="run(2)">2</button>
+
+        <button onclick="run(3)">3</button>
+        <button onclick="run(4)">4</button>
+        <button onclick="run(6)">6</button>
+
+        <button class="out" onclick="out('bowled')">OUT</button>
+        <button class="runout" onclick="runOut('striker')">
+          Runout (Striker)
+        </button>
+        <button class="runout" onclick="runOut('nonStriker')">
+          Runout (Non-Striker)
+        </button>
+        <button class="catch" onclick="out('catch')">CAUGHT</button>
+      </div>
+
+      <!-- ===============================
+       EXTRA CONTROLS
+  ================================ -->
+      <div class="extra-controls">
+        <button onclick="undo()">Undo ⏪</button>
+        <button onclick="showScorecard()">Scorecard 📊</button>
+      </div>
+    </div>
+
+    <!-- ===============================
+     SCRIPTS (ORDER IMPORTANT)
+================================ -->
+    <script src="js/utils.js"></script>
+    <script src="js/rules.js"></script>
+    <script src="js/match.js"></script>
+  </body>
+</html>

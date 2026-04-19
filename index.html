@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket Score Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div class="navbar">🏏 Cricket Score Tracker</div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+      <h2>Match Setup</h2>
+
+      <!-- TEAM NAMES -->
+      <h3>Teams</h3>
+      <input
+        type="text"
+        id="teamA"
+        placeholder="Enter Team A name"
+        value="Team 1"
+      />
+
+      <input
+        type="text"
+        id="teamB"
+        placeholder="Enter Team B name"
+        value="Team 2"
+      />
+
+      <!-- OVERS -->
+      <h3>Overs</h3>
+      <input type="number" id="overs" value="5" min="1" />
+
+      <!-- TEAM A PLAYERS -->
+      <h3>Team A Players (Max 11)</h3>
+      <div id="teamAPlayers" class="player-box"></div>
+
+      <!-- TEAM B PLAYERS -->
+      <h3>Team B Players (Max 11)</h3>
+      <div id="teamBPlayers" class="player-box"></div>
+
+      <!-- RULES -->
+      <h3>Rules (Optional)</h3>
+      <label>
+        <input type="checkbox" id="sixOut" />
+        Six = OUT
+      </label>
+
+      <!-- START BUTTON -->
+      <button onclick="startMatch()">Start Toss 🎲</button>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

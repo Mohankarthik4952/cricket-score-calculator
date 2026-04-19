@@ -1,0 +1,8 @@
+{
+  "routes": [
+    { "src": "/", "dest": "/cricket.html" },
+    { "src": "/toss", "dest": "/toss.html" },
+    { "src": "/match", "dest": "/match.html" },
+    { "src": "/result", "dest": "/result.html" }
+  ]
+}

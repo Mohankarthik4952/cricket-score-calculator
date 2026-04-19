@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Match Result</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div class="navbar">🏆 Match Result</div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+      <!-- WINNER -->
+      <h2 id="winnerText">Winner</h2>
+
+      <hr />
+
+      <!-- TEAM 1 SCORE -->
+      <div class="score-box">
+        <h3 id="teamAName"></h3>
+        <p id="teamAScore"></p>
+      </div>
+
+      <br />
+
+      <!-- TEAM 2 SCORE -->
+      <div class="score-box">
+        <h3 id="teamBName"></h3>
+        <p id="teamBScore"></p>
+      </div>
+
+      <hr />
+
+      <!-- SCORECARD -->
+      <h3>Scorecard</h3>
+      <div id="scorecard"></div>
+
+      <!-- BUTTONS -->
+      <button onclick="restartMatch()">🔁 New Match</button>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+      /* ===============================
+   LOAD DATA
+================================ */
+
+      let teamA = localStorage.getItem("teamA");
+      let teamB = localStorage.getItem("teamB");
+
+      let scoreA = localStorage.getItem("scoreA") || "0/0";
+      let scoreB = localStorage.getItem("scoreB") || "0/0";
+
+      let winner = localStorage.getItem("winner") || "Match Completed";
+
+      /* ===============================
+   DISPLAY BASIC INFO
+================================ */
+
+      document.getElementById("teamAName").innerText = teamA;
+      document.getElementById("teamBName").innerText = teamB;
+
+      document.getElementById("teamAScore").innerText = scoreA;
+      document.getElementById("teamBScore").innerText = scoreB;
+
+      document.getElementById("winnerText").innerText = winner;
+
+      /* ===============================
+   SCORECARD DISPLAY
+================================ */
+
+      let scorecardDiv = document.getElementById("scorecard");
+
+      let teamAPlayers = JSON.parse(localStorage.getItem("teamAPlayers")) || [];
+      let teamBPlayers = JSON.parse(localStorage.getItem("teamBPlayers")) || [];
+
+      function createList(title, players) {
+        let html = `<h4>${title}</h4><ul>`;
+        players.forEach((p) => {
+          html += `<li>${p}</li>`;
+        });
+        html += "</ul>";
+        return html;
+      }
+
+      scorecardDiv.innerHTML =
+        createList(teamA + " Players", teamAPlayers) +
+        createList(teamB + " Players", teamBPlayers);
+
+      /* ===============================
+   RESET MATCH
+================================ */
+
+      function restartMatch() {
+        localStorage.clear();
+        window.location.href = "cricket.html";
+      }
+    </script>
+  </body>
+</html>

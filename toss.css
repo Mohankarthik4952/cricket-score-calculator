@@ -1,0 +1,127 @@
+@import url("style.css");
+
+/* ===============================
+   SECTION SPACING
+================================ */
+.section {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* ===============================
+   BUTTON GROUP (TEAM / CALL)
+================================ */
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* GROUP BUTTONS */
+.button-group button {
+  flex: 1;
+  min-width: 120px;
+
+  padding: 12px;
+  border-radius: 12px;
+
+  background: #020617;
+  border: 1px solid #1e293b;
+  color: #e2e8f0;
+
+  transition: all 0.2s ease;
+}
+
+/* HOVER */
+.button-group button:hover {
+  border-color: #22c55e;
+  background: #020617;
+  transform: translateY(-2px);
+}
+
+/* ACTIVE SELECTED BUTTON */
+.active {
+  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+  color: black !important;
+  border: none !important;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+/* ===============================
+   MAIN BUTTON (FLIP)
+================================ */
+.main-btn {
+  margin-top: 20px;
+
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: black;
+  font-weight: bold;
+}
+
+/* HOVER */
+.main-btn:hover {
+  background: linear-gradient(135deg, #fbbf24, #fb923c);
+}
+
+/* ===============================
+   RESULT TEXT
+================================ */
+#result {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+/* ===============================
+   WINNER TEXT
+================================ */
+#winner {
+  margin-top: 8px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #22c55e;
+}
+
+/* ===============================
+   DECISION BOX (BAT/BOWL)
+================================ */
+#decision {
+  margin-top: 20px;
+}
+
+/* DECISION BUTTONS */
+#decision .button-group button {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: white;
+}
+
+/* ===============================
+   HIDDEN CLASS
+================================ */
+.hidden {
+  display: none;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 500px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  #winner {
+    font-size: 20px;
+  }
+
+  #result {
+    font-size: 16px;
+  }
+}
