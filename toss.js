@@ -92,5 +92,5 @@ function choose(choice) {
   localStorage.setItem("bowlingTeam", bowling);
 
   // go to match page
-  window.location.href = "./match.html";
+  window.location.href = "/match.html";
 }
