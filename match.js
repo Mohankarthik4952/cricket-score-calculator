@@ -12,7 +12,7 @@ if (
 ) {
   alert("Please start match from home page!");
 
-  window.location.href = "./cricket.html";
+  window.location.href = "/cricket.html";
 }
 
 let teamA = localStorage.getItem("teamA");
@@ -386,7 +386,7 @@ function endMatch() {
     localStorage.setItem("scoreA", `${target - 1}`);
   }
 
-  window.location.href = "./result.html";
+  window.location.href = "/result.html";
 }
 
 /* ===============================
